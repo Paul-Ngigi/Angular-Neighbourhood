@@ -20,6 +20,10 @@ export class BusinessService {
     return this.http.get(url)
   }
 
+  get(id: any): Observable<any> {
+    return this.http.get(`${url}${id}/`);
+  }
+
   create(business: { name: string, business_name: string, business_email: string, admin: any, neighbourhood: any }) {
     return this.http.post(url, business)
   }

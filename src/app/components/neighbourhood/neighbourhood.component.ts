@@ -21,6 +21,7 @@ export class NeighbourhoodComponent implements OnInit {
       console.log(error);
     })
   }
+
   ngOnInit(): void {
     this.getNeighbourhood();
   }

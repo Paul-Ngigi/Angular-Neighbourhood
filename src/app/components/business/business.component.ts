@@ -23,10 +23,18 @@ export class BusinessComponent implements OnInit {
   }
 
   updateBusiness(id: any, business: Business) {
-    this.businessservice.update(id, this.business).subscribe((data) => {
+    this.businessservice.update(id, business).subscribe((data) => {
       console.warn('data', data)
     })
     console.warn(id)
+  }
+
+  deleteBusiness(id:any){
+    this.businessservice.delete(id).subscribe(response => {
+      console.log(response)
+    }, error =>{
+      console.log(error)
+    })
   }
 
   ngOnInit(): void {
