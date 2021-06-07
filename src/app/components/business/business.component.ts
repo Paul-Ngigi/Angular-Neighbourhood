@@ -13,13 +13,20 @@ export class BusinessComponent implements OnInit {
 
   constructor(private businessservice: BusinessService) { }
 
-  getBusiness(){
-    this.businessservice.fetchData().subscribe(data=>{
+  getBusiness() {
+    this.businessservice.fetchData().subscribe(data => {
       this.business = data;
       console.log(this.business);
     }, error => {
       console.log(error);
     })
+  }
+
+  updateBusiness(id: any, business: Business) {
+    this.businessservice.update(id, this.business).subscribe((data) => {
+      console.warn('data', data)
+    })
+    console.warn(id)
   }
 
   ngOnInit(): void {
