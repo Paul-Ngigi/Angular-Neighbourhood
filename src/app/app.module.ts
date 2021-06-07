@@ -12,7 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BusinessService } from './service/business/business.service';
 import { AddBusinessComponent } from './components/add-business/add-business.component';
-import { AddNeighbourhoodComponent } from './components/add-neighbourhood/add-neighbourhood.component'
+import { AddNeighbourhoodComponent } from './components/add-neighbourhood/add-neighbourhood.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AddNeighbourhoodComponent } from './components/add-neighbourhood/add-ne
     NeighbourhoodComponent,
     BusinessComponent,
     AddBusinessComponent,
-    AddNeighbourhoodComponent
+    AddNeighbourhoodComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
