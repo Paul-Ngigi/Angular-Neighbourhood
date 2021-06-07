@@ -1,4 +1,3 @@
-import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Business } from '../../interfaces/business';
 import { BusinessService } from '../../service/business/business.service'
@@ -11,7 +10,6 @@ import { BusinessService } from '../../service/business/business.service'
 export class BusinessComponent implements OnInit {
 
   business: Business[] = []; // Empty business list
-  greetings:string = "Hello There"
 
   constructor(private businessservice: BusinessService) { }
 

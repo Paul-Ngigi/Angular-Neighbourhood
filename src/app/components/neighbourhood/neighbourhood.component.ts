@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Neighbourhood } from '../../interfaces/neighbourhood'
+import { NeighbourhoodService } from '../../service/neighbourhood/neighbourhood.service'
 
 @Component({
   selector: 'app-neighbourhood',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NeighbourhoodComponent implements OnInit {
 
-  constructor() { }
+  neighbourhood: Neighbourhood[] = [] // Empty neighbourhood list
 
+  constructor(private neighbourhoodservice: NeighbourhoodService) { }
+
+  getNeighbourhood() {
+    this.neighbourhoodservice.fetchData().subscribe(data => {
+      this.neighbourhood = data;
+      console.log(this.neighbourhood);
+    }, error => {
+      console.log(error);
+    })
+  }
   ngOnInit(): void {
+    this.getNeighbourhood();
   }
 
 }
