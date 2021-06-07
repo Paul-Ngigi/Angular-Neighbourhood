@@ -8,14 +8,18 @@ import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood
 import { BusinessComponent } from './components/business/business.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BusinessService } from './service/business/business.service'
+import { BusinessService } from './service/business/business.service';
+import { AddBusinessComponent } from './components/add-business/add-business.component';
+import { AddNeighbourhoodComponent } from './components/add-neighbourhood/add-neighbourhood.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NeighbourhoodComponent,
-    BusinessComponent
+    BusinessComponent,
+    AddBusinessComponent,
+    AddNeighbourhoodComponent
   ],
   imports: [
     BrowserModule,
