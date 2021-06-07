@@ -1,7 +1,7 @@
 export interface Business {
-    id: number;
+    id: any;
     business_name: string;
     business_email: string;
-    admin: number;
-    neighbourhood: number;
+    admin: any;
+    neighbourhood: any;
 }

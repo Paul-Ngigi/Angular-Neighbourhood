@@ -1,36 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Business } from '../../interfaces/business';
+
+const url = 'https://p-neighbourhood.herokuapp.com/api/business/'
+const updateUrl = 'https://p-neighbourhood.herokuapp.com/api/business/update'
+const deleteUrl = 'https://p-neighbourhood.herokuapp.com/api/business/delete'
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class BusinessService {
-
-
-  baseUrl = 'https://p-neighbourhood.herokuapp.com';
-  getAllBusinesses = 'https://p-neighbourhood.herokuapp.com/api/business'
-  updateBusiness = 'https://p-neighbourhood.herokuapp.com/api/business/update'
-  deleteBusiness = 'https://p-neighbourhood.herokuapp.com/api/business/delete'
 
   constructor(private http: HttpClient) { }
 
-  fetchAll(): Observable<Business[]> {
-    return this.http.get<Business[]>(this.baseUrl)
-    console.log(this.http.get<Business[]>(this.baseUrl))
+  fetchData(): Observable<any> {
+    console.log(this.http.get('http://127.0.0.1:8000/api/business/'))
+    return this.http.get(url)
   }
 
-  create(business:any){
-    return this.http.post(this.baseUrl, business)
+  create(business: { name: string, business_name: string, business_email: string, admin: any, neighbourhood: any }) {
+    return this.http.post(url, business)
   }
 
-  update(id:any, business:any){
-    return this.http.put(`${this.updateBusiness}${id}/`, business)
+  update(id: any, business: any) {
+    return this.http.put(`${updateUrl}${id}/`, business)
   }
 
-  delete(id:any): Observable<any>{
-    return this.http.delete(`${this.deleteBusiness}${id}`)
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${deleteUrl}${id}`)
   }
 }

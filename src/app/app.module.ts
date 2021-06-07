@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
 import { BusinessComponent } from './components/business/business.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BusinessService } from './service/business/business.service'
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { BusinessComponent } from './components/business/business.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [BusinessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
