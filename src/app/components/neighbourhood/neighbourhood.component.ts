@@ -9,17 +9,41 @@ import { NeighbourhoodService } from '../../service/neighbourhood/neighbourhood.
 })
 export class NeighbourhoodComponent implements OnInit {
 
-  neighbourhood: Neighbourhood[] = [] // Empty neighbourhood list
+  neighbourhood: Neighbourhood= {
+    id: '',
+    neighbourhood_name: '',
+    location: '',
+    count: '',
+    admin: '',
+  } 
+
+  hoods:any 
 
   constructor(private neighbourhoodservice: NeighbourhoodService) { }
 
   getNeighbourhood() {
     this.neighbourhoodservice.fetchData().subscribe(data => {
-      this.neighbourhood = data;
-      console.log(this.neighbourhood);
+      this.hoods = data;
+      console.log(this.hoods);
     }, error => {
       console.log(error);
     })
+  }
+
+  deleteNeighbourhood(id: any) {
+    this.neighbourhoodservice.delete(id).subscribe(response => {
+      console.log(response);
+    },
+      error => {
+        console.log(error);
+      });
+  }
+
+  updateNeighbourhood(neighbourhood: Neighbourhood) {
+    this.neighbourhoodservice.update(this.neighbourhood.id, neighbourhood).subscribe((data) => {
+      console.warn('data', data)
+    })
+    console.warn(neighbourhood.id)
   }
 
   ngOnInit(): void {

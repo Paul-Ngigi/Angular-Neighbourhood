@@ -1,7 +1,7 @@
 export interface Neighbourhood {
-    id: any;
-    neighbourhood_name: string;
-    location: string;
-    count: number;
-    admin: any;
+    id?: any;
+    neighbourhood_name?: string;
+    location?: string;
+    count?: any;
+    admin?: any;
 }

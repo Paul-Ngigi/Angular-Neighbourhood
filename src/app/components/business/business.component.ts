@@ -24,6 +24,7 @@ export class BusinessComponent implements OnInit {
 
   updateBusiness(id: any, business: Business) {
     this.businessservice.update(id, business).subscribe((data) => {
+      console.log(business.id)
       console.warn('data', data)
     })
     console.warn(id)

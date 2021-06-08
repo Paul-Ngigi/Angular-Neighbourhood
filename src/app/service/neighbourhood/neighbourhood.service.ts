@@ -27,7 +27,7 @@ export class NeighbourhoodService {
     return this.http.post(url, neighbourhood)
   }
 
-  update(id: any, neighbourhood: any) {
+  update(id: any, neighbourhood: Neighbourhood) {
     return this.http.put(`${updateUrl}${id}/`, neighbourhood)
   }
 

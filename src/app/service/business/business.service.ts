@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Business } from '../../interfaces/business';
 
 const url = 'https://p-neighbourhood.herokuapp.com/api/business/'
-const updateUrl = 'https://p-neighbourhood.herokuapp.com/api/business/update'
-const deleteUrl = 'https://p-neighbourhood.herokuapp.com/api/business/delete'
+const updateUrl = 'https://p-neighbourhood.herokuapp.com/api/business/update/'
+const deleteUrl = 'https://p-neighbourhood.herokuapp.com/api/business/delete/'
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class BusinessService {
     return this.http.post(url, business)
   }
 
-  update(id: any, business: any) {
+  update(id: number, business: Business) {
     return this.http.put(`${updateUrl}${id}/`, business)
   }
 

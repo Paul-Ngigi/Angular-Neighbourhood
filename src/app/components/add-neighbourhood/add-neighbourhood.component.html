@@ -8,20 +8,26 @@
     <div class="row mt-5">
         <form #neighbourhoodForm="ngForm" (ngSubmit)="onSubmit(neighbourhoodForm.value)" method="POST">
             <div class="form-group">
-                <input ngModel #admin="ngModel" (change)='log(admin)' type="text" class="form-control" name="admin" id="admin" placeholder="Admin" required>
+                <input ngModel #admin="ngModel" name="admin" (change)='log(admin)' type="text" class="form-control"
+                    id="admin" placeholder="1" required>
                 <div class="alert alert-danger" *ngIf='admin.touched && !admin.valid'>Admin is required</div>
             </div>
             <div class="form-group mt-4">
-                <input ngModel #neighbourhoodName="ngModel" (change)='log(neighbourhoodName)' type="text" class="form-control" name="neighbourhood_name" id="name" placeholder="Neighbourhood Name" required>
-                <div class="alert alert-danger" *ngIf='neighbourhoodName.touched && !neighbourhoodName.valid'>Neighbourhood name is required</div>
+                <input ngModel #neighbourhoodName="ngModel" (change)='log(neighbourhoodName)' type="text"
+                    class="form-control" name="neighbourhood_name" id="name" placeholder="Neighbourhood Name" required>
+                <div class="alert alert-danger" *ngIf='neighbourhoodName.touched && !neighbourhoodName.valid'>
+                    Neighbourhood name is required</div>
             </div>
             <div class="form-group mt-4">
-                <input ngModel #location="ngModel" type="text" class="form-control" name="location" id="name" placeholder="Location" required>
+                <input ngModel #location="ngModel" type="text" class="form-control" name="location" id="name"
+                    placeholder="Location" required>
                 <div class="alert alert-danger" *ngIf='location.touched && !location.valid'>Location is required</div>
             </div>
             <div class="form-group mt-4">
-                <input ngModel #count="ngModel" type="number" class="form-control" name="count" id="name" placeholder="Population Count" required>
-                <div class="alert alert-danger" *ngIf='count.touched && !count.valid'>Neighbourhood name is required</div>
+                <input ngModel #count="ngModel" type="number" class="form-control" name="count" id="name"
+                    placeholder="Population Count" required>
+                <div class="alert alert-danger" *ngIf='count.touched && !count.valid'>Neighbourhood name is required
+                </div>
             </div>
             <button type="submit" class="btn btn-outline-info mt-5">Add Neighbourhood</button>
         </form>
