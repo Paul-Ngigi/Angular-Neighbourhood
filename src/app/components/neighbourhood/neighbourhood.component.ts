@@ -41,6 +41,7 @@ export class NeighbourhoodComponent implements OnInit {
 
   updateNeighbourhood(neighbourhood: Neighbourhood) {
     this.neighbourhoodservice.update(this.neighbourhood.id, neighbourhood).subscribe((data) => {
+      
       console.warn('data', data)
     })
     console.warn(neighbourhood.id)
