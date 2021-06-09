@@ -33,6 +33,7 @@ export class NeighbourhoodComponent implements OnInit {
   deleteNeighbourhood(id: any) {
     this.neighbourhoodservice.delete(id).subscribe(response => {
       console.log(response);
+      this.getNeighbourhood();
     },
       error => {
         console.log(error);

@@ -33,6 +33,7 @@ export class BusinessComponent implements OnInit {
   deleteBusiness(id:any){
     this.businessservice.delete(id).subscribe(response => {
       console.log(response)
+      this.getBusiness()
     }, error =>{
       console.log(error)
     })
